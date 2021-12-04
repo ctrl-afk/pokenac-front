@@ -1,0 +1,7 @@
+<nav>
+    <div class="logo" (click)="goHome()">
+        <img src="assets/logo.svg">
+    </div>
+    <img class="search" (click)="search()" src="assets/search.svg" alt="search">    
+</nav>
+<app-search *ngIf="display"></app-search>

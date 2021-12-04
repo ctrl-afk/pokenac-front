@@ -1,0 +1,14 @@
+<div class="intro">
+    <h1 *ngIf="erro; else erroMsg">Results for "{{ value }}" </h1>
+    <ng-template #erroMsg>
+        <h1>Erro! Try type something to be search.</h1>
+    </ng-template>
+
+</div>
+<div class="pokedex"
+    *ngIf="res$ | async as res; else elseBlock">
+
+    <app-card *ngFor="let pkm of res" [pkm]="pkm"></app-card>
+</div>
+
+<ng-template #elseBlock><p>Loading...</p></ng-template>

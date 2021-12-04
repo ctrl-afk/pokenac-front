@@ -1,0 +1,27 @@
+@import '../../../var'
+.home
+    width: 100vw
+
+.intro
+    .bgpoke
+        margin-right: -78px
+        float: inline-end
+        animation: rot 15s infinite
+
+.loadMore
+    width: 60vw
+    background: $blue
+    border: none
+    height: 2.5rem
+    margin-left: 20vw
+
+.loadMore:hover
+    background: $dark-blue
+
+@keyframes rot 
+    0%
+        transform: rotate(0deg)
+    50%
+        transform: rotate(180deg)
+    100%
+        transform: rotate(360deg)

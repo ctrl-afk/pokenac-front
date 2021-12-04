@@ -1,0 +1,88 @@
+@import '../../../var'
+:host
+    text-align: center
+
+.details
+    p
+        margin: 0.5rem 0
+
+.info
+    *
+        color: $black
+    img
+        width: 25vw
+        background: $black
+        position: relative
+        z-index: 2
+        margin-top: -5vh
+    .types
+        height: 5vh
+        *
+            margin: 10px
+            padding: 3px
+            width: 15vw 
+            display: inline-block
+            border-radius: 15px
+            font-weight: 300
+            color: white 
+            background-color: $black
+    .measures
+        *
+            font-size: 1.5rem
+        div
+            width: 20vw
+            padding: 5vw
+            display: inline-block
+        .height
+            border-right: 1px solid
+
+.stats
+    padding: 0.5rem 5vw
+    margin: 2vh 0
+    height: 45vh
+    table
+        margin: 15px auto
+        th
+            padding: 8px
+            text-align: left
+            border-bottom: 1px dotted
+    .bar
+        width: 255px
+        height: 10px
+        background: $black
+        margin: auto
+        border-radius: 5px
+        div
+            border-radius: 5px
+            height: 10px
+            background: $red
+            display: block
+
+.evo
+    min-height: 60vh
+    background: $black
+    padding: 1.5rem
+    width: 80vw
+    margin: 10vh auto
+    h2
+        color: white
+        margin: 1rem
+button
+    width: 2.5rem
+    height: 97px
+    border: none
+    background: $black
+.next
+    right: 0
+    top: 55%
+    position: fixed
+    img
+        margin: 0 -23px
+        transform: rotate(-90deg)
+.prev
+    left: 0
+    top: 55%
+    position: fixed
+    img
+        margin: 0 -23px
+        transform: rotate(90deg)

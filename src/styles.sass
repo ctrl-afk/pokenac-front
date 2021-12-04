@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+@import normalize.css
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&display=swap')
+@import 'var'
+
+*
+    margin: 0
+    box-sizing: border-box
+    font-family: 'Karla', sans-serif
+    color: white
+
+h1 h2 h3 h4
+    font-weight: 700
+
+.intro
+    height: 255px !important
+    background: $red
+    text-align: center
+    padding: 7vh
+    overflow: hidden
+    color: white
+
+.pokedex
+    display: grid
+    width: 1040px
+    margin: -10vh auto 5vh
+    grid-template-columns: repeat(5, 200px)
+    grid-gap: 1.5vw
+
+@media screen and (max-width: 680px)
+    .pokedex
+        width: 410px
+        grid-template-columns: repeat(2, 200px)
+
+@media screen and (min-width: 681px) and (max-width: 900px) 
+    .pokedex
+        width: 620px
+        grid-template-columns: repeat(3, 200px)
+
+@media screen and (min-width: 901px) and (max-width: 1200px) 
+    .pokedex
+        width: 830px
+        grid-template-columns: repeat(4, 200px)

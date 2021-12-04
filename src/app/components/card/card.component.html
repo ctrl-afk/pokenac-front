@@ -1,0 +1,10 @@
+<section class="card" (click)="detail(pkm.id)">
+    <h4>#{{pkm.id}}</h4>
+    <img [src]="pkm.sprites.front_default" [alt]="pkm.name">
+    <h2 class="name">{{pkm.name}}</h2>
+    <div class="types">
+        <p *ngFor="let type of pkm.types">{{type}}</p>
+    </div>
+</section>
+
+

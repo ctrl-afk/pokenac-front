@@ -1,0 +1,10 @@
+<div class="chain" (click)="detail(id)">
+    <section>
+        <img [src]="img">
+        <h3>{{ name }} <b>#{{ id }}</b></h3>
+    </section>
+</div>
+<img src="assets/arrow.svg" *ngIf="evolves_to.length > 0">
+<div class="evolves_to">
+    <app-evo *ngFor="let c of evolves_to" [chain]="c"></app-evo>
+</div>

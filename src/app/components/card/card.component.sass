@@ -1,0 +1,77 @@
+@import '../../../var'
+
+.card
+    height: 264px
+    z-index: 2
+    position: relative
+    width: 200px
+    background-color: $black
+    text-align: center
+    display: grid
+    grid-template-columns: 20% 60% 20%
+    grid-template-rows: 10% 45% 20% auto
+    *
+        color: white
+    h4
+        width: 20%
+        float: left
+        margin: 4px
+    img
+        height: 115px
+        width: 115px
+        border-radius: 50%
+        margin: auto 
+        background-color: $lg-black
+        grid-column-start: 2
+        grid-row-start: 2
+    .name
+        margin: 5px auto
+        grid-row-start: 3
+        grid-column-start: 1
+        grid-column-end: 3
+        width: inherit
+        text-transform: capitalize
+    .types
+        text-align: center
+        grid-column-start: 2
+        grid-row-start: 4
+        *
+            margin: 5px 0
+            border-radius: 10px
+            font-weight: 300
+            background-color: $lg-black
+
+.card:hover
+    background-color: #202020e5
+
+@media screen and (max-width: 480px)
+    .card
+        height: 214px
+        width: 150px
+        .name
+            font-size: 1.2rem
+        img
+            height: 90px
+            width: 90px
+        .types
+            font-size: 0.8rem
+
+// @media screen and (max-width: 1020px)
+//     .card
+//         height: 39vh
+//         width: $wid-1020
+//     .name
+//         font-size: 1.4rem
+// @media screen and (max-width: 780px)
+//     .card
+//         height: 40vh
+//         width: $wid-780
+//     .name
+//         font-size: 1.4rem
+
+// @media screen and (max-width: 680px)
+//     .card
+//         height: 42vh
+//         width: $wid-680
+//     .name
+//         font-size: 1.4rem
