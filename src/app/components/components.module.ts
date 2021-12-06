@@ -14,6 +14,7 @@ import { Error404Component } from './error404/error404.component';
 import { FindComponent } from './find/find.component';
 import { findReducer } from './find/state/find.reducer';
 import { FindEffects } from './find/state/find.effects';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FindEffects } from './find/state/find.effects';
     CardComponent,
     EvoComponent,
     Error404Component,
-    FindComponent
+    FindComponent,
+    LoadingComponent
   ],
   imports: [
     CommonModule,

@@ -2,7 +2,6 @@
     <div class="intro">
         <h1>Welcome to Pokenac!</h1>
         <h2>A pokedex project.</h2>
-        <img class="bgpoke" src="assets/bgpoke.svg">
     </div>
     <div class="pokedex"
         infiniteScroll
@@ -11,9 +10,10 @@
         (scrolled)="onScroll()"
         *ngIf="pokemon$ | async as pokedex; else elseBlock"
     >
+        
         <app-card *ngFor="let pkm of pokedex" [pkm]="pkm"></app-card>
     </div>
     <button *ngIf="lockLoad" class="loadMore" (click)="loadMore()"><h2>Load more</h2></button>
 </div>
 
-<ng-template #elseBlock><p>Loading...</p></ng-template>
+<ng-template #elseBlock><app-loading></app-loading></ng-template>
