@@ -26,8 +26,12 @@ h1 h2 h3 h4
     margin: -10vh auto 5vh
     grid-template-columns: repeat(5, 200px)
     grid-gap: 1.5vw
+@media screen and (min-width: 0px) and (max-width: 480px)
+    .pokedex
+        width: 310px
+        grid-template-columns: repeat(2, 150px)
 
-@media screen and (max-width: 680px)
+@media screen and (min-width: 481px) and (max-width: 680px)
     .pokedex
         width: 410px
         grid-template-columns: repeat(2, 200px)

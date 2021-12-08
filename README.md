@@ -1,8 +1,16 @@
-# Pokenanc - Frontend
+# Pokenac - Frontend
 
 ## Preview
 
-p
+![preview](preview/pre.png)
+![preview - 2](preview/pre2.png) 
+![preview - 3](preview/pre3.png)
+
+## About
+
+This project was developed as a full stack exercise, applying AngularJS 12 features as RxJS - State Managing.
+
+Pages are generated for each pokemon using app-routing and data obtained from the PostgresSQL database.
 
 ## Angular
 
