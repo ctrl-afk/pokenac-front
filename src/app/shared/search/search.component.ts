@@ -7,14 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.sass']
 })
 export class SearchComponent implements OnInit {
-  
   constructor(private router: Router) { }
   value: String;
 
   ngOnInit(): void {}
 
-  find(): void {
-    console.log('val = ',this.value)
-    this.router.navigate(['find'])
-  }
-}
+  find(): void {this.router.navigate(['find'])}}

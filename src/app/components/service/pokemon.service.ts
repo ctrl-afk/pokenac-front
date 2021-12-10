@@ -16,6 +16,7 @@ export class PokemonService {
   }
 
   getByName(name: string): Observable<any> {
+    
     return this.http.get(`${this.url}?name=${name}`);
   }
 

@@ -13,20 +13,16 @@ import { Observable } from 'rxjs';
   styleUrls: ['./find.component.sass']
 })
 export class FindComponent implements OnInit {
-  value: string | null;
+  value: string;
   res$: Observable<Pokemon[]> | null;
-  erro: boolean =  false;
+  erro: boolean =  true;
 
   constructor(private router: ActivatedRoute, 
     private store: Store<FindState>) { }
 
   ngOnInit(): void {
-    this.router.queryParams.subscribe(params => {
-      this.value = params['value'];
-      //console.log(this.value);
-    })
-    if(this.value != null){
-      
+    this.router.queryParams.subscribe(params => this.value = params['value'])
+    if(this.value.length > 0){
       this.store.dispatch( fromFindActions.getPokemonByName({name: this.value}) );
       setTimeout(() => {
         this.res$ = this.store.select( fromFindSelectors.selectRes);
