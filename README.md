@@ -2,9 +2,12 @@
 
 ## Preview
 
-![preview](preview/pre.png)
-![preview - 2](preview/pre2.png) 
-![preview - 3](preview/pre3.png)
+- Home - Preview
+![Home - Preview](preview/pre.png) 
+- Mobile - Preview
+![Mobile - Preview](preview/pre2.png) 
+- Details - Preview
+![Details - Preview](preview/pre3.png)
 
 ## About
 
