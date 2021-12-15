@@ -2,18 +2,24 @@
 
 ## Preview
 
-- Home - Preview
+Home - Preview
+
 ![Home - Preview](preview/pre.png) 
 
-- Mobile - Preview
+
+Mobile - Preview
+
 ![Mobile - Preview](preview/pre2.png) 
 
-- Details - Preview
+
+Details - Preview
+
 ![Details - Preview](preview/pre3.png)
+
 
 ## About
 
-This project was developed as a full stack exercise, applying AngularJS 12 features as RxJS - State Managing.
+This project was developed as a full stack exercise, applying Angular 12 features as RxJS - State Managing.
 
 Pages are generated for each pokemon using app-routing and data obtained from the PostgresSQL database.
 
