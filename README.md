@@ -4,8 +4,10 @@
 
 - Home - Preview
 ![Home - Preview](preview/pre.png) 
+
 - Mobile - Preview
 ![Mobile - Preview](preview/pre2.png) 
+
 - Details - Preview
 ![Details - Preview](preview/pre3.png)
 
