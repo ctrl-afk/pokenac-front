@@ -7,7 +7,7 @@ import { Info } from '../model/info';
   providedIn: 'root'
 })
 export class InformationService {
-  private url = 'http://localhost:8080/api/v1/info'
+  private url = 'http://pokenac.herokuapp.com/api/v1/info'
 
   constructor(private http: HttpClient) { }
 

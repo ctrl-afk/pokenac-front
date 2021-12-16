@@ -7,7 +7,7 @@ import { Pokemon } from '../model/pokemon';
   providedIn: 'root'
 })
 export class PokemonService {
-  private url = 'http://localhost:8080/api/v1/pokemon'
+  private url = 'http://pokenac.herokuapp.com/api/v1/pokemon'
 
   constructor(private http: HttpClient) {}
 
