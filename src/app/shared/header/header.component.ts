@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   goHome(){
-    this.router.navigate(['home'])
+    this.router.navigate([''])
   }
 
   search(){ this.display = !this.display; }
