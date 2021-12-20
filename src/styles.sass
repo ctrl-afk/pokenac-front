@@ -16,16 +16,18 @@ h1 h2 h3 h4
     height: 255px 
     background: $red
     text-align: center
-    padding: 7vh
+    padding-top: 2rem
     overflow: hidden
     color: white
+    h1
+        text-transform: capitalize
 
 .pokedex
     display: grid
     width: 1040px
-    margin: -10vh auto 5vh
+    margin: -2.5rem auto 5vh
     grid-template-columns: repeat(5, 200px)
-    grid-gap: 1.5vw
+    grid-gap: 10px
 @media screen and (min-width: 0px) and (max-width: 480px)
     .pokedex
         width: 310px

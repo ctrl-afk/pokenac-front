@@ -9,45 +9,59 @@
 .info
     *
         color: $black
-    img
-        width: 25vw
-        background: $black
-        position: relative
-        z-index: 2
-        margin-top: -5vh
     .types
         height: 5vh
         *
             margin: 10px
             padding: 3px
             width: 15vw 
+            min-width: 100px
             display: inline-block
             border-radius: 15px
             font-weight: 300
             color: white 
             background-color: $black
     .measures
+        margin: 2rem
         *
             font-size: 1.5rem
         div
-            width: 20vw
-            padding: 5vw
+            width: 150px
+            padding: 10px
             display: inline-block
         .height
             border-right: 1px solid
+.pkmImg
+    margin-top: -5rem
+    img
+        display: inline
+        min-width: 200px
+        width: 25vw
+        background: $black
+    .ctrlImg
+        button
+            margin: 3px
+            width: 32px
+            height: 32px
+            color: white
+            border-radius: 50%
+            border: 2px solid 
+            &:hover
+                background: #2e2e2ec0
 
 .stats
-    padding: 0.5rem 5vw
-    margin: 2vh 0
-    height: 45vh
+    margin: 2vh 5vw
+    width: 90vw
     table
         margin: 15px auto
         th
-            padding: 8px
+            min-width: 69px
+            height: 50px
+            padding: 4px
             text-align: left
-            border-bottom: 1px dotted
+            border-bottom: 1px groove
     .bar
-        width: 255px
+        width: calc( 85vw - 138px )
         height: 10px
         background: $black
         margin: auto
@@ -59,7 +73,7 @@
             display: block
 
 .evo
-    min-height: 60vh
+    min-height: 50vh
     background: $black
     padding: 1.5rem
     width: 80vw
@@ -86,3 +100,10 @@ button
     img
         margin: 0 -23px
         transform: rotate(90deg)
+
+@media screen and (min-width: 980px)
+    .stats
+        width: 70vw
+        margin: 2.5vh 15vw
+        .bar
+            width: calc( 65vw - 138px )

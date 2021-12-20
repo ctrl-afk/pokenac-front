@@ -5,11 +5,18 @@
     </div>
 
     <div class="info" *ngIf="info; else loading">
-        <img [src]="pkm.sprites.front_default">
-            <div class="types">
-                <p *ngFor="let type of pkm.types">{{type}}</p>
+        <div class="pkmImg">
+            <div class="ctrlImg">
+                <button (click)="shiny(img_src)">S</button>
+                <button (click)="pos(img_src)" >P</button>
+                <button (click)="gen(img_src)">G</button>
             </div>
-        <span class="measures">
+            <img [src]="img_src">
+        </div>
+        <div class="types">
+            <p *ngFor="let type of pkm.types">{{type}}</p>
+        </div>
+        <section class="measures">
             <div class="height">
                 <h4>{{ info.height/10 }}m</h4>
                 <p>HEIGHT</p>
@@ -18,7 +25,7 @@
                 <h4>{{ info.weight/10 }}kg</h4>
                 <p>WEIGHT</p>
             </div>
-        </span>
+        </section>
 
         <h3 class="genus">{{ info.genus }}</h3>
         <p>{{ info.flavorText }}</p>
@@ -30,32 +37,32 @@
                 <tr>
                     <th>HP</th>
                     <th>{{ info.hp }}</th>
-                    <th><div class="bar"><div [style.width.px]="info.hp"></div></div></th>
+                    <th><div class="bar"><div [style.width.%]="calc_width(info.hp)"></div></div></th>
                 </tr>
                 <tr>
                     <th>Speed</th>
                     <th>{{ info.speed }}</th>
-                    <th><div class="bar"><div [style.width.px]="info.speed"></div></div></th>
+                    <th><div class="bar"><div [style.width.%]="calc_width(info.speed)"></div></div></th>
                 </tr>
                 <tr>
                     <th>Attack</th>
                     <th>{{ info.attack }}</th>
-                    <th><div class="bar"><div [style.width.px]="info.attack"></div></div></th>
+                    <th><div class="bar"><div [style.width.%]="calc_width(info.attack)"></div></div></th>
                 </tr>
                 <tr>
                     <th>Defense</th>
                     <th>{{ info.defense }}</th>
-                    <th><div class="bar"><div [style.width.px]="info.defense"></div></div></th>
+                    <th><div class="bar"><div [style.width.%]="calc_width(info.defense)"></div></div></th>
                 </tr>
                 <tr>
                     <th>Special Attack</th>
                     <th>{{ info.special_attack }}</th>
-                    <th><div class="bar"><div [style.width.px]="info.special_attack"></div></div></th>
+                    <th><div class="bar"><div [style.width.%]="calc_width(info.special_attack)"></div></div></th>
                 </tr>
                 <tr>
                     <th>Special Defense</th>
                     <th>{{ info.special_defense }}</th>
-                    <th><div class="bar"><div [style.width.px]="info.special_defense"></div></div></th>
+                    <th><div class="bar"><div [style.width.%]="calc_width(info.special_defense)"></div></div></th>
                 </tr>
             </table>
         </div>

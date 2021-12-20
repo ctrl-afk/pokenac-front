@@ -4,12 +4,11 @@ import { Pokemon } from '../model/pokemon';
 import { DetailsState } from './state/details.reducer';
 import * as fromDetailsActions from '../details/state/details.actions'
 import * as fromDetailsSelectors from '../details/state/details.selectors'
-import { Observable } from 'rxjs';
+import { Observable} from 'rxjs';
 import { Info } from '../model/info';
 import { Evo } from '../model/evo';
 import { Chain } from '../model/chain';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-details',
@@ -24,7 +23,7 @@ export class DetailsComponent implements OnInit {
   evoload: boolean;
   chain: Chain;
   isSuccess: Observable<boolean>;
-
+  img_src: any;
   constructor(private store: Store<DetailsState>, private route: ActivatedRoute,
               private router: Router) {}
 
@@ -63,5 +62,46 @@ export class DetailsComponent implements OnInit {
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
       this.router.navigate(['details', --id])
     })
+  }
+  
+  shiny(img: string): void {
+    console.log(this.pkm.sprites)
+    if(img == this.pkm.sprites.front_default || img == this.pkm.sprites.front_shiny) {
+      img = img == this.pkm.sprites.front_default ? this.pkm.sprites.front_shiny : this.pkm.sprites.front_default
+    } else if(img == this.pkm.sprites.front_default_female || img == this.pkm.sprites.front_shiny_female) {
+      img = img == this.pkm.sprites.front_default_female ? this.pkm.sprites.front_shiny_female : this.pkm.sprites.front_default_female
+    } else if(img == this.pkm.sprites.back_default || img == this.pkm.sprites.back_shiny) {
+      img = img == this.pkm.sprites.back_default ? this.pkm.sprites.back_shiny : this.pkm.sprites.back_default
+    } else if(img == this.pkm.sprites.front_default_female || img == this.pkm.sprites.back_shiny_female) {
+      img = img == this.pkm.sprites.front_default_female ? this.pkm.sprites.back_shiny_female : this.pkm.sprites.front_default_female
+    }
+  }
+
+  pos(img: string): void {
+    if(img == this.pkm.sprites.front_default || img == this.pkm.sprites.back_default) {
+      img = img == this.pkm.sprites.front_default ? this.pkm.sprites.back_default : this.pkm.sprites.front_default
+    } else if(img == this.pkm.sprites.front_default_female || img == this.pkm.sprites.back_default_female) {
+      img = img == this.pkm.sprites.front_default_female ? this.pkm.sprites.back_default_female : this.pkm.sprites.front_default_female
+    } else if(img == this.pkm.sprites.front_shiny || img == this.pkm.sprites.back_shiny) {
+      img = img == this.pkm.sprites.front_shiny ? this.pkm.sprites.back_shiny : this.pkm.sprites.front_shiny
+    } else if(img == this.pkm.sprites.front_shiny_female || img == this.pkm.sprites.back_shiny_female) {
+      img = img == this.pkm.sprites.front_shiny_female ? this.pkm.sprites.back_shiny_female : this.pkm.sprites.front_shiny_female
+    }
+  }
+
+  gen(img: string): void {
+    if(img == this.pkm.sprites.front_default || img == this.pkm.sprites.front_default_female) {
+      img = img == this.pkm.sprites.front_default ? this.pkm.sprites.front_default_female : this.pkm.sprites.front_default
+    } else if(img == this.pkm.sprites.back_default || img == this.pkm.sprites.back_default_female) {
+      img = img == this.pkm.sprites.back_default ? this.pkm.sprites.back_default_female : this.pkm.sprites.back_default
+    } else if(img == this.pkm.sprites.front_shiny || img == this.pkm.sprites.front_shiny_female) {
+      img = img == this.pkm.sprites.front_shiny ? this.pkm.sprites.front_shiny_female : this.pkm.sprites.front_shiny
+    } else if(img == this.pkm.sprites.back_shiny || img == this.pkm.sprites.back_shiny_female) {
+      img = img == this.pkm.sprites.back_shiny ? this.pkm.sprites.back_shiny_female : this.pkm.sprites.back_shiny
+    }
+  }
+
+  calc_width(width: number): number {
+    return (width * 100) / 255;
   }
 }
