@@ -34,6 +34,7 @@ export class DetailsComponent implements OnInit {
     this.store.dispatch(fromDetailsActions.getPokemon( {pkm_id: this.id} ))
     this.store.select(fromDetailsSelectors.selectPokemon)
       .subscribe(res => this.pkm = res)
+    this.img_src = this.pkm.sprites.front_default;
     
     this.store.dispatch(fromDetailsActions.getInfo( {info_id: this.id} ))
     this.store.select(fromDetailsSelectors.selectInfo)

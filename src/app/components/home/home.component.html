@@ -10,10 +10,10 @@
         (scrolled)="onScroll()"
         *ngIf="pokemon$ | async as pokedex; else elseBlock"
     >
-        
-        <app-card *ngFor="let pkm of pokedex" [pkm]="pkm"></app-card>
+        <app-loading *ngIf="pokedex.length == 0"></app-loading>
+        <app-card  *ngFor="let pkm of pokedex" [pkm]="pkm"></app-card>
     </div>
     <button *ngIf="lockLoad" class="loadMore" (click)="loadMore()"><h2>Load more</h2></button>
 </div>
 
-<ng-template #elseBlock><app-loading></app-loading></ng-template>
+<ng-template #elseBlock></ng-template>
