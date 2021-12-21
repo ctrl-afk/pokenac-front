@@ -34,13 +34,13 @@ export class DetailsComponent implements OnInit {
     this.store.dispatch(fromDetailsActions.getPokemon( {pkm_id: this.id} ))
     this.store.select(fromDetailsSelectors.selectPokemon)
       .subscribe(res => this.pkm = res)
-    this.img_src = this.pkm.sprites.front_default;
-    
+      
     this.store.dispatch(fromDetailsActions.getInfo( {info_id: this.id} ))
     this.store.select(fromDetailsSelectors.selectInfo)
       .subscribe((res: Info) => this.info = res)
     setTimeout(() => {
       this.store.dispatch(fromDetailsActions.getEvo( {evo_id: this.info.evo_chain_id} ))
+      this.img_src = this.pkm.sprites.front_default;
     }, 1000)
     setTimeout(() => {
       this.store.select(fromDetailsSelectors.selectEvo)
