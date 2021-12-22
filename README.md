@@ -1,5 +1,7 @@
 # Pokenac - Frontend
 
+The page is host in Github Pages. [Click here](https://ctrl-afk.github.io/pokenac-front/) to see! 
+
 ## Preview
 
 Home - Preview
