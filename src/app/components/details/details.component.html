@@ -1,5 +1,4 @@
-<!-- <div class="details" *ngIf="isSuccess | async; else error"> -->
-<div class="details">
+<div class="details" *ngIf="isSuccess | async; else error">
     <div class="intro" *ngIf="pkm; else loading">
         <h2>#{{ pkm.id }}</h2>
         <h1>{{ pkm.name }}</h1>
@@ -10,7 +9,7 @@
             <div class="ctrlImg">
                 <button (click)="shiny(img_src)"><img src="assets/shiny.svg" alt="S"></button>
                 <button (click)="pos(img_src)" ><img src="assets/pos.svg" alt="P"></button>
-                <button (click)="gen(img_src)"><img src="assets/gen.svg" alt="G"></button>
+                <button *ngIf="pkm.sprites.front_default_female" (click)="gen(img_src)"><img src="assets/gen.svg" alt="G"></button>
             </div>
             <img class="displayImg" [src]="img_src">
         </div>
@@ -81,8 +80,8 @@
 
 <ng-template #loading><app-loading></app-loading></ng-template>
 
-<!-- <ng-template #error>
+<ng-template #error>
     <div class="details">
         <app-error404></app-error404>
     </div>
-</ng-template> -->
+</ng-template>

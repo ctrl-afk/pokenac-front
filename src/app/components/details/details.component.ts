@@ -30,7 +30,7 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.isSuccess = this.store.select(fromDetailsSelectors.selectSuccess)
-    
+   
     this.store.dispatch(fromDetailsActions.getPokemon( {pkm_id: this.id} ))
     this.store.select(fromDetailsSelectors.selectPokemon)
       .subscribe(res => this.pkm = res)
@@ -76,6 +76,7 @@ export class DetailsComponent implements OnInit {
     } else if(img == this.pkm.sprites.front_default_female || img == this.pkm.sprites.back_shiny_female) {
       img = img == this.pkm.sprites.front_default_female ? this.pkm.sprites.back_shiny_female : this.pkm.sprites.front_default_female
     }
+    this.img_src = img
   }
 
   pos(img: string): void {
@@ -88,6 +89,7 @@ export class DetailsComponent implements OnInit {
     } else if(img == this.pkm.sprites.front_shiny_female || img == this.pkm.sprites.back_shiny_female) {
       img = img == this.pkm.sprites.front_shiny_female ? this.pkm.sprites.back_shiny_female : this.pkm.sprites.front_shiny_female
     }
+    this.img_src = img
   }
 
   gen(img: string): void {
@@ -100,6 +102,7 @@ export class DetailsComponent implements OnInit {
     } else if(img == this.pkm.sprites.back_shiny || img == this.pkm.sprites.back_shiny_female) {
       img = img == this.pkm.sprites.back_shiny ? this.pkm.sprites.back_shiny_female : this.pkm.sprites.back_shiny
     }
+    this.img_src = img
   }
 
   calc_width(width: number): number {
