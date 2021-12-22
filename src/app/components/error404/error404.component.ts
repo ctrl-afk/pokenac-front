@@ -6,10 +6,6 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./error404.component.sass']
 })
 export class Error404Component implements OnInit {
- 
-  @Input()
-  id: Number;
-  
   constructor() { }
 
   ngOnInit(): void {

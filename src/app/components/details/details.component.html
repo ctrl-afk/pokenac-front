@@ -7,11 +7,11 @@
     <div class="info" *ngIf="info; else loading">
         <div class="pkmImg">
             <div class="ctrlImg">
-                <button (click)="shiny(img_src)">S</button>
-                <button (click)="pos(img_src)" >P</button>
-                <button (click)="gen(img_src)">G</button>
+                <button (click)="shiny(img_src)"><img src="assets/shiny.svg" alt="S"></button>
+                <button (click)="pos(img_src)" ><img src="assets/pos.svg" alt="P"></button>
+                <button *ngIf="pkm.sprites.front_default_female" (click)="gen(img_src)"><img src="assets/gen.svg" alt="G"></button>
             </div>
-            <img [src]="img_src">
+            <img class="displayImg" [src]="img_src">
         </div>
         <div class="types">
             <p *ngFor="let type of pkm.types">{{type}}</p>
@@ -82,6 +82,6 @@
 
 <ng-template #error>
     <div class="details">
-        <app-error404 [id]="id"></app-error404>
+        <app-error404></app-error404>
     </div>
 </ng-template>
